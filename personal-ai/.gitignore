@@ -1,18 +1,27 @@
 # =========================
 # Datos privados
 # =========================
-data/raw/
-data/processed/
-data/knowledge/
+personal-ai/data/raw/
+personal-ai/data/processed/
+personal-ai/data/knowledge/
+personal-ai/data/papers/
+personal-ai/data/jarvis.db
 
 # =========================
 # Modelos y bases vectoriales
 # =========================
-models/
-vector_db/
+personal-ai/models/
+personal-ai/vector_db/
 *.gguf
 *.bin
 *.safetensors
+
+# =========================
+# Frontend
+# =========================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
 
 # =========================
 # Entornos virtuales
