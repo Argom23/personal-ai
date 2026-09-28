@@ -6,11 +6,16 @@ import unicodedata
 import numpy as np
 import requests
 
-print(f"LOCAL_MODEL CARGADO DESDE: {__file__}")
-
 from sentence_transformers import SentenceTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+
+
+# --------------------------------------------------
+# RUTAS DEL PROYECTO
+# --------------------------------------------------
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 # --------------------------------------------------
@@ -18,26 +23,43 @@ from sklearn.metrics.pairwise import cosine_similarity
 # --------------------------------------------------
 
 OLLAMA_URL = "http://localhost:11434/api/chat"
-MODEL = "qwen3.5:9b" # lOW qwen3.5:9b / HI qwen3.5:27b
 
-STYLE_FILE = Path(
-    "data/processed/style_prompt.txt"
+MODEL = "qwen3.5:9b"
+
+
+STYLE_FILE = (
+    PROJECT_ROOT
+    / "data"
+    / "processed"
+    / "style_prompt.txt"
 )
 
-EXAMPLES_FILE = Path(
-    "data/processed/style_examples_clean.jsonl"
+EXAMPLES_FILE = (
+    PROJECT_ROOT
+    / "data"
+    / "processed"
+    / "style_examples_clean.jsonl"
 )
 
-EMBEDDINGS_FILE = Path(
-    "data/processed/style_embeddings.npy"
+EMBEDDINGS_FILE = (
+    PROJECT_ROOT
+    / "data"
+    / "processed"
+    / "style_embeddings.npy"
 )
 
-KNOWLEDGE_CHUNKS_FILE = Path(
-    "data/processed/knowledge_chunks.jsonl"
+KNOWLEDGE_CHUNKS_FILE = (
+    PROJECT_ROOT
+    / "data"
+    / "processed"
+    / "knowledge_chunks.jsonl"
 )
 
-KNOWLEDGE_EMBEDDINGS_FILE = Path(
-    "data/processed/knowledge_embeddings.npy"
+KNOWLEDGE_EMBEDDINGS_FILE = (
+    PROJECT_ROOT
+    / "data"
+    / "processed"
+    / "knowledge_embeddings.npy"
 )
 
 EMBEDDING_MODEL_NAME = (

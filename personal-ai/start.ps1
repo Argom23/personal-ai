@@ -10,7 +10,7 @@ $frontend = Join-Path $root "frontend"
 # $true  = mostrar terminales
 # $false = ejecutar todo oculto
 #
-$debug = $false
+$debug = $true
 
 
 Write-Host "Iniciando Jarvis..." -ForegroundColor Cyan
